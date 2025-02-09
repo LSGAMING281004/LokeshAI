@@ -16,7 +16,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -99,7 +98,7 @@ fun MessageRow(messageModel: MessageModel) {
                         top = 8.dp,
                         bottom = 8.dp
                         )
-                    .clip(RoundedCornerShape(48f))
+                    .clip(RoundedCornerShape(28f))
                     .background(if(isModel) ColorModelMessage else ColorUserMessage)
                     .padding(16.dp)
             ) {
@@ -107,7 +106,7 @@ fun MessageRow(messageModel: MessageModel) {
                 Text(
                     text = messageModel.message,
                     fontWeight = FontWeight.W500,
-                    color = Color.White,
+                    color = Color.Black,
                 )
                 }
             }
@@ -122,7 +121,7 @@ fun MessageInput(onMessageSent: (String) -> Unit) {
     }
 
     Row(
-        modifier = Modifier.padding(8.dp),
+        modifier = Modifier.padding(6.dp),
         verticalAlignment = Alignment.CenterVertically
     ){
         OutlinedTextField(
@@ -149,13 +148,15 @@ fun AppHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.primary)
+            .background(Color.Transparent)
     ){
         Text(
-            modifier = Modifier.padding(16.dp),
-            text = "Gemini AI",
-            color = Color.White,
-            fontSize = 22.sp
+            modifier = Modifier.padding(13.dp),
+            text = "CB3AI",
+            fontWeight = FontWeight.W500,
+            color = Color.DarkGray,
+            fontSize = 26.sp
+
 
 
         )
